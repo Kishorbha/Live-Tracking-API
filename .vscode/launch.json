@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug",
+        "args": ["${workspaceFolder}/index.js", "--project", "tsconfig.json" ],
+        "cwd": "${workspaceRoot}",
+        "protocol": "inspector",
+        "envFile": "${workspaceFolder}/.env",
+      },
+
+    ]
+}

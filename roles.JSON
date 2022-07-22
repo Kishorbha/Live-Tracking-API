@@ -1,0 +1,100 @@
+db.admissionpermissions.insertMany([
+{
+    role: "admin",
+    description: "This role handles all the permissions for admin",
+    permit: [{
+        module: "driver",
+        actions:[
+            {
+            resource: 'create',
+            act: 'create:any'
+            attributes: '*',
+            },
+
+            {
+            resource: 'delete',
+            act: 'delete:any'
+            attributes: '*',
+            },
+          
+            {
+            resource: 'update',
+            act: 'delete:any'
+            attributes: '*',
+            },
+            {
+                resource: 'list',
+                act: 'list:any'
+                attributes: '*',
+            },
+        ],
+    },
+    {
+        module: "truck",
+        actions:[
+            {
+            resource: 'create:any',
+            attributes: '*',
+            },
+
+            {
+            resource: 'delete:any',
+            attributes: '*',
+            },
+            
+            {
+            resource: 'update:any',
+            attributes: '*',
+            },
+        ],
+    },  
+    ],
+},
+
+{
+    role: "hr",
+    description: "This role handles all the permissions for hr",
+    permit: [{
+        module: "driver",
+        actions:[
+            {
+            resource: 'read:own',
+            attributes: '*',
+            },
+
+            {
+            resource: 'update:own',
+            attributes: '*',
+            },
+        ],
+    },
+    
+    {
+        module: "truck",
+        actions:[
+            {
+            resource: 'read:own',
+            attributes: '*',
+            },
+
+            {
+            resource: 'update:own',
+            attributes: '*',
+            },
+        ],
+    }],
+},
+
+{
+    role: "dispatcher",
+    description: "This role handles all the permissions for dispatcher",
+    permit: [{
+        module: "driver",
+       actions:[{
+            resource: 'read:any ,
+            attributes: '*',
+            }],
+    }],
+},
+]);
+
